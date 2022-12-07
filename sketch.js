@@ -46,6 +46,8 @@ function setup() {
 function draw() {
 	background(200);
 	rectMode(CENTER);
+	
+	restart();
 
 	ground.display();
 	leftSide.display();  
@@ -76,5 +78,11 @@ function keyPressed() {
 
 	if (keyCode === DOWN_ARROW) {
 		Matter.Body.applyForce(ball,ball.position,{x:-10,y:-40});
+	}
+}
+
+function restart () {
+	if (ball.isTouching(bottomSide)) {
+		ball.position.x = 260, ball.position.y = 100;
 	}
 }
