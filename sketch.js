@@ -52,6 +52,14 @@ function draw() {
 	rightSide.display();
 	bottomSide.display();
 	
+	push();
+	
+	fill("black");
+	stroke("black");
+	text("You can use all the arrows for this", 1600/2, 700);
+	
+	pop();
+	
 	imageMode(CENTER);
 
 	image(paperImg,ball.position.x,ball.position.y,radius,radius);
